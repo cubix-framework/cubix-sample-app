@@ -1,0 +1,38 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 8e3a6532b9e6aa9680f5e23d3f55a8e39e8ee201c5915689ffeea825940348c9
+
+name:           cubix-sample-app
+version:        0.1.0.0
+description:    A very simple example Cubix app
+homepage:       https://github.com/cubix-framework/cubix-sample-app#readme
+bug-reports:    https://github.com/cubix-framework/cubix-sample-app/issues
+author:         James Koppel
+maintainer:     jkoppel@mit.edu
+copyright:      2019 James Koppel
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/cubix-framework/cubix-sample-app
+
+executable cubix-sample-app
+  main-is: Main.hs
+  other-modules:
+      Paths_cubix_sample_app
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , cubix
+    , cubix-compdata
+  default-language: Haskell2010

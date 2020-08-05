@@ -1,6 +1,6 @@
-name:                uses-cubix
+name:                cubix-sample-app
 version:             0.1.0.0
-github:              "githubuser/uses-cubix"
+github:              "cubix-framework/cubix-sample-app"
 license:             BSD3
 author:              "James Koppel"
 maintainer:          "jkoppel@mit.edu"
@@ -9,13 +9,13 @@ copyright:           "2019 James Koppel"
 extra-source-files:
 - README.md
 
-description:  An example of how to configure a package to use Cubix as a dependency
+description:  A very simple example Cubix app
 
 dependencies:
 - base >= 4.7 && < 5
 
 executables:
-  uses-cubix:
+  cubix-sample-app:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -24,4 +24,4 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - cubix
-    - language-javascript
+    - cubix-compdata
