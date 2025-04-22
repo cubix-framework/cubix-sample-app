@@ -1,23 +1,28 @@
-resolver: lts-21.0
+resolver: lts-23.19
 
 packages:
 - .
 
 extra-deps:
-- language-lua-0.11.0.1
+- language-lua-0.11.0.2
 - git: git@github.com:jkoppel/language-javascript.git
   commit: 3b2026cf9c443bc798683c12206de439354283ce
-- language-dot-0.1.1
-- git: git@github.com:jkoppel/language-c.git
-  commit: 49c340419e9ea6395c1915f9de7aedf903483c95
+- language-dot-0.1.2
+- git: git@github.com:winitzki/language-c.git
+  commit: 14d2099cb407e0060b6ca2ef8b13f78374ac8d8d
 - git: git@github.com:jkoppel/language-java.git
   commit: a41ba850a1e2b3e233cc8e5132433921b6a6dca0
-- language-python-0.5.8
+- git: https://github.com/winitzki/solidity-hs
+  commit: ac25b25cf4cb176ad36175fb979c767f72577f29
+- git: https://github.com/winitzki/language-python.git
+  commit: 19370545706444928e624077d0f07fda66b26e18
+  subdirs:
+   - language-python
 - concurrent-supply-0.1.8
 - wl-pprint-1.2.1@sha256:aea676cff4a062d7d912149d270e33f5bb0c01b68a9db46ff13b438141ff4b7c,734
 - alex-tools-0.6.1
 - git: git@github.com:cubix-framework/cubix.git
-  commit: 3369376c6b18e690f847a1558ab53e36daf003b8 # release-0.7
+  commit: 19097eb7555cc749f88d60f163cc2336fdde0714
   subdirs:
   - .
   - compdata
