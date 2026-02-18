@@ -47,13 +47,8 @@ runVandalize "java"     filename = runTransform (parseFile @MJavaSig   filename)
 runVandalize "js"       filename = runTransform (parseFile @MJSSig     filename) (pretty . vandalize)
 runVandalize "lua"      filename = runTransform (parseFile @MLuaSig    filename) (pretty . vandalize)
 runVandalize "python"   filename = runTransform (parseFile @MPythonSig filename) (pretty . vandalize)
-runVandalize "sui-move" filename = do
-  mterm <- parseFile @MSuiMoveSig filename
-  case mterm of
-    Nothing   -> putStrLn $ "Failed to parse: " ++ filename
-    Just term ->
-      let vandalized = vandalize term :: MSuiMoveTerm SourceFileL
-      in  putStrLn $ SuiMovePretty.pretty (SuiMoveTrans.untranslate vandalized)
+runVandalize "sui-move" filename = runTransform (parseFile @MSuiMoveSig filename)
+  (SuiMovePretty.pretty . SuiMoveTrans.untranslate . (vandalize :: MSuiMoveTerm SourceFileL -> MSuiMoveTerm SourceFileL))
 runVandalize lang _ = putStrLn $ "Unknown language: " ++ lang ++ "\nSupported: c, java, js, lua, python, sui-move"
 
 main :: IO ()
