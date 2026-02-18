@@ -6,43 +6,43 @@ with-compiler: ghc-9.8.4
 source-repository-package
     type: git
     location: https://github.com/cubix-framework/cubix.git
-    tag: af5bbdecc381724566cd0d718269c042a5da1146
+    tag: 1db7cc712c07cc38b2790f8aa27fdac198f7a1cf
     subdir: .
 
 source-repository-package
     type: git
     location: https://github.com/cubix-framework/cubix.git
-    tag: af5bbdecc381724566cd0d718269c042a5da1146
+    tag: 1db7cc712c07cc38b2790f8aa27fdac198f7a1cf
     subdir: compdata
 
 source-repository-package
     type: git
     location: https://github.com/cubix-framework/cubix.git
-    tag: af5bbdecc381724566cd0d718269c042a5da1146
+    tag: 1db7cc712c07cc38b2790f8aa27fdac198f7a1cf
     subdir: compstrat
 
 source-repository-package
     type: git
     location: https://github.com/cubix-framework/cubix.git
-    tag: af5bbdecc381724566cd0d718269c042a5da1146
+    tag: 1db7cc712c07cc38b2790f8aa27fdac198f7a1cf
     subdir: comptrans
 
 source-repository-package
     type: git
     location: https://github.com/cubix-framework/cubix.git
-    tag: af5bbdecc381724566cd0d718269c042a5da1146
+    tag: 1db7cc712c07cc38b2790f8aa27fdac198f7a1cf
     subdir: cubix-sui-move
 
 source-repository-package
     type: git
     location: https://github.com/cubix-framework/cubix.git
-    tag: af5bbdecc381724566cd0d718269c042a5da1146
+    tag: 1db7cc712c07cc38b2790f8aa27fdac198f7a1cf
     subdir: cubix-tree-sitter
 
 source-repository-package
     type: git
     location: https://github.com/cubix-framework/cubix.git
-    tag: af5bbdecc381724566cd0d718269c042a5da1146
+    tag: 1db7cc712c07cc38b2790f8aa27fdac198f7a1cf
     subdir: tree-sitter-sui-move
 
 source-repository-package

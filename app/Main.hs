@@ -21,11 +21,7 @@ import Cubix.Language.Python.Parametric.Common as PCommon
 import Cubix.Language.Parametric.Syntax
 
 import Cubix.Language.SuiMove.IPS ( MSuiMoveSig )
-import Cubix.Language.SuiMove.IPS.Trans qualified as SuiMoveTrans
-import Cubix.Language.SuiMove.IPS.Types ( MSuiMoveTerm )
-import Cubix.Language.SuiMove.Modularized ( SourceFileL )
 import Cubix.Language.SuiMove.ParsePretty ()
-import Cubix.Language.SuiMove.Pretty qualified as SuiMovePretty
 
 -- | Append "_vandalized" to every identifier in a term.
 -- Fully generic: works on any language whose IPS includes Ident.
@@ -42,13 +38,12 @@ runTransform mParsedFile use = do
    maybe (return ()) putStrLn (use <$> parsedFile)
 
 runVandalize :: String -> FilePath -> IO ()
-runVandalize "c"        filename = runTransform (parseFile @MCSig      filename) (pretty . vandalize)
-runVandalize "java"     filename = runTransform (parseFile @MJavaSig   filename) (pretty . vandalize)
-runVandalize "js"       filename = runTransform (parseFile @MJSSig     filename) (pretty . vandalize)
-runVandalize "lua"      filename = runTransform (parseFile @MLuaSig    filename) (pretty . vandalize)
-runVandalize "python"   filename = runTransform (parseFile @MPythonSig filename) (pretty . vandalize)
-runVandalize "sui-move" filename = runTransform (parseFile @MSuiMoveSig filename)
-  (SuiMovePretty.pretty . SuiMoveTrans.untranslate . (vandalize :: MSuiMoveTerm SourceFileL -> MSuiMoveTerm SourceFileL))
+runVandalize "c"        filename = runTransform (parseFile @MCSig       filename) (pretty . vandalize)
+runVandalize "java"     filename = runTransform (parseFile @MJavaSig    filename) (pretty . vandalize)
+runVandalize "js"       filename = runTransform (parseFile @MJSSig      filename) (pretty . vandalize)
+runVandalize "lua"      filename = runTransform (parseFile @MLuaSig     filename) (pretty . vandalize)
+runVandalize "python"   filename = runTransform (parseFile @MPythonSig  filename) (pretty . vandalize)
+runVandalize "sui-move" filename = runTransform (parseFile @MSuiMoveSig filename) (pretty . vandalize)
 runVandalize lang _ = putStrLn $ "Unknown language: " ++ lang ++ "\nSupported: c, java, js, lua, python, sui-move"
 
 main :: IO ()
