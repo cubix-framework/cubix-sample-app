@@ -3,8 +3,6 @@ cabal-version: 1.12
 -- This file has been generated from package.yaml by hpack version 0.33.0.
 --
 -- see: https://github.com/sol/hpack
---
--- hash: 8e3a6532b9e6aa9680f5e23d3f55a8e39e8ee201c5915689ffeea825940348c9
 
 name:           cubix-sample-app
 version:        0.1.0.0
@@ -30,9 +28,12 @@ executable cubix-sample-app
       Paths_cubix_sample_app
   hs-source-dirs:
       app
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -freduction-depth=400
   build-depends:
       base >=4.7 && <5
+    , containers
     , cubix
     , cubix-compdata
-  default-language: Haskell2010
+    , cubix-sui-move
+    , mtl
+  default-language: GHC2021

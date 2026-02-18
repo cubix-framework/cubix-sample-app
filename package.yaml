@@ -22,6 +22,10 @@ executables:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -freduction-depth=400
     dependencies:
     - cubix
     - cubix-compdata
+    - cubix-sui-move
+    - containers
+    - mtl
