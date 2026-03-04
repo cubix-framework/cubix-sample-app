@@ -1,4 +1,4 @@
-resolver: lts-23.19
+resolver: lts-23.24
 
 packages:
 - .
@@ -22,9 +22,36 @@ extra-deps:
 - wl-pprint-1.2.1@sha256:aea676cff4a062d7d912149d270e33f5bb0c01b68a9db46ff13b438141ff4b7c,734
 - alex-tools-0.6.1
 - git: https://github.com/cubix-framework/cubix.git
-  commit: 39c12de365aee9a12095b48922cda6e5f81bfbac
+  commit: f72c9c9554e92ba9d707d6f8a06b184fb5625d38
   subdirs:
   - .
   - compdata
   - compstrat
   - comptrans
+  - cubix-sui-move
+  - cubix-tree-sitter
+  - tree-sitter-sui-move
+# hs-tree-sitter must use git: (not github:) because
+# hs-tree-sitter-capi needs the vendored tree-sitter C library
+# which is provided via a git submodule.
+- git: https://github.com/wenkokke/hs-tree-sitter.git
+  commit: 36811ed91dad00c6dcecfcb1a32a973e771b1011
+  subdirs:
+  - base-compat-constptr
+  - hs-tree-sitter-capi
+  - hs-tree-sitter
+  - hs-tree-sitter-generate-ast
+- ghc-debug-stub-0.7.0.0@sha256:d4d155d2a2e1aff3d93f8670ca47195bd3eb69468cd233fc661bb86158047df7,1601
+- ghc-debug-convention-0.7.0.0@sha256:1ad94e857fb66eda7075bb3fd7a20230dd5aed1de91149769ce988f967acc11a,635
+- path-io-1.6.3@sha256:371bae3355b69c5db06c516a50ea0d82eed96105da6af1d93f8e9613444e5967,2142
+- text-2.1.2@sha256:69f99964f3918de098da01902a546547680e33dfdcd2513ab1df0ead62c7312a,10609
+- unicode-data-names-0.6.0@sha256:4783ba5d4db463a2f722527cc9aba7b9825ddabaedc10360af0a81785e25ae14,5723
+- unicode-data-0.8.0@sha256:f3538e3f61938edc4ebcd0b6c23b2cdcd5ebee4800aa993bca8712df72e87865,5616
+- parsec-3.1.18.0@sha256:dfbb9835b8abc966b6bbd34340ef5122227b4cf4480062b85ca4c4704f054f98,4535
+
+allow-newer: true
+allow-newer-deps:
+- comptrans
+- cubix-sui-move
+- cubix-tree-sitter
+- unicode-data-names
