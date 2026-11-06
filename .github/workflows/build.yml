@@ -26,4 +26,7 @@ jobs:
           stack-version: '3.5.1'
       - name: Permissions bug workaround, see https://github.com/commercialhaskell/stack/issues/2187
         run: "chown -R $(id -un):$(id -gn) ~"
+      # hs-tree-sitter's submodules use git@github.com: URLs, and the runner has no ssh.
+      - name: Rewrite SSH git URLs to HTTPS for CI
+        run: git config --global url."https://github.com/".insteadOf "git@github.com:"
       - run: "stack build --allow-different-user --ghc-options='-O0 -j +RTS -A256m -n2m -RTS' --test"
